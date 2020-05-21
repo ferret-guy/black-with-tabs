@@ -16,18 +16,19 @@ def get_long_description() -> str:
 
 
 setup(
-    name="black",
+    name="black-with-tabs",
     use_scm_version={
         "write_to": "_black_version.py",
         "write_to_template": 'version = "{version}"\n',
     },
-    description="The uncompromising code formatter.",
+    description="The uncompromising code formatter, now with tabs.",
     long_description=get_long_description(),
     long_description_content_type="text/markdown",
     keywords="automation formatter yapf autopep8 pyfmt gofmt rustfmt",
-    author="Łukasz Langa",
-    author_email="lukasz@langa.pl",
-    url="https://github.com/psf/black",
+    author="Mark Omo",
+    author_email="mark+black@markomo.me",
+    url="https://github.com/ferret-guy/black-with-tabs",
+    project_urls={"Changelog": "https://github.com/psf/black/blob/master/CHANGES.md"},
     license="MIT",
     py_modules=["black", "blackd", "_black_version"],
     packages=["blib2to3", "blib2to3.pgen2"],
