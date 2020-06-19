@@ -1537,7 +1537,7 @@ class Line:
         if not self:
             return "\n"
 
-        indent = "    " * self.depth
+        indent = "\t" * self.depth
         leaves = iter(self.leaves)
         first = next(leaves)
         res = f"{first.prefix}{indent}{first.value}"
@@ -3919,7 +3919,7 @@ def is_line_short_enough(line: Line, *, line_length: int, line_str: str = "") ->
     if not line_str:
         line_str = str(line).strip("\n")
     return (
-        len(line_str) <= line_length
+        len(line_str.expandtabs(4)) <= line_length
         and "\n" not in line_str  # multiline strings
         and not line.contains_standalone_comments()
     )
